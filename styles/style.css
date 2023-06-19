@@ -153,24 +153,8 @@ figure {
     margin-right: auto;
 }
 
-.mb--14 {
-    margin-bottom: 14px;
-}
-
-.mb--16 {
-    margin-bottom: 16px;
-}
-
-.mb--18 {
-    margin-bottom: 18px;
-}
-
 .mb--26 {
     margin-bottom: 26px;
-}
-
-.mb--35 {
-    margin-bottom: 35px;
 }
 
 .mb--40 {
@@ -185,28 +169,8 @@ figure {
     margin-bottom: 60px;
 }
 
-.mb--200 {
-    margin-bottom: 200px;
-}
-
-.mb--250 {
-    margin-bottom: 60px;
-}
-
-.mr--18 {
-    margin-right: 18px;
-}
-
 .mr--38 {
     margin-right: 38px;
-}
-
-.mr--48 {
-    margin-right: 35px;
-}
-
-.mr--74 {
-    margin-right: 74px;
 }
 
 .mg--top--160 {
@@ -231,8 +195,6 @@ figure {
     font-family: 'Rubik_bold';
     src: url(../assets/fonts/Rubik/static/Rubik-Bold.ttf) format('truetype');
 }
-
-
 
 .container {
     max-width: 1200px;
@@ -343,7 +305,7 @@ header {
     position: relative;
     /* height: 100vh; */
     /* min-height: 920px; */
-    height: calc(920px - 92px);
+    height: calc(100% - 92px);
 }
 
 .hero .hero_wrapper .hero_content {
@@ -363,8 +325,6 @@ header {
 .hero_wrapper {
     min-height: 600px;
 }
-
-
 
 .hero_content {
     max-width: 520px;
@@ -505,7 +465,8 @@ header {
     display: flex;
     flex-direction: column;
     align-self: normal;
-    flex: 1 1 calc(100% / 3);
+    width: calc(100% / 3);
+    /* flex: 1 1 calc(100% / 3); */
     padding: 56px 20px 50px;
     text-align: center;
 }
@@ -620,9 +581,13 @@ header {
 
 
 @media(max-width:769px) {
+
     /* .fx--sb-cen {
         flex-direction: column;
     } */
+    .menu_list {
+        display: none;
+    }
 
     .platform_row.container.fx--sb-cen {
         flex-direction: column;
@@ -717,6 +682,7 @@ header {
     }
 
     .plan_card {
+        width: 100%;
         padding: 20px 20px 30px;
     }
 
@@ -737,18 +703,22 @@ header {
     header {
         padding: 6px 9px;
     }
+
     .hero_content .btn_success_green {
         padding: 4px 41px;
     }
+
     .hero_title.mb--40 {
         font-size: 29px;
         margin-bottom: 24px;
     }
+
     .hero_content p {
         width: 100%;
         margin: 0px auto 20px auto;
         text-align: center;
     }
+
     .menu_list {
         display: none;
     }
@@ -781,9 +751,11 @@ header {
         margin-top: -20px;
         padding: 12px;
     }
+
     .trans__list_item {
         margin: 10px 0px;
     }
+
     .trans_img.mb--26 {
         margin-bottom: 2px;
     }
@@ -810,16 +782,19 @@ header {
         width: 100%;
         font-size: 13px;
     }
+
     .plan_card a {
         width: 100%;
     }
+
     .plan_text {
         max-width: 100%;
         margin: auto auto 9px auto;
     }
+
     .plan_sub_desc {
         margin: 0px auto 25px auto;
-        max-width:100%;
+        max-width: 100%;
     }
-    
+
 }
