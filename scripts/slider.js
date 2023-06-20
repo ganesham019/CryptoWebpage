@@ -7,7 +7,6 @@ dots.forEach((dot, index) => {
     dot.addEventListener("click", (e) => {
         let currentDotNumber = e.target.dataset.num;
         if (currentDotNumber !== activeNum) {
-            const displayWidth = wrapper.parentElement.clientWidth;
             const pixels = -350 * currentDotNumber;
             console.log(pixels);
             wrapper.style.transform = 'translateX(' + pixels + 'px)';
