@@ -178,7 +178,7 @@ figure {
 }
 
 .m--200 {
-    margin: 200px 0px;
+    margin: 200px 0px 70px 0px;
 }
 
 @font-face {
@@ -580,6 +580,160 @@ header {
 }
 
 
+
+.slider {
+    max-width: 1400px;
+    height: calc(1200px - 400px);
+    margin: 80px auto;
+    padding: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider::after {
+    content: "";
+    width: 56%;
+    height: 100%;
+    position: absolute;
+    right: 0px;
+    top: 0;
+    z-index: 1;
+    background-color: var(--marine-blue);
+}
+
+.slider-summary p {
+    position: absolute;
+    left: 100px;
+    top: 40px;
+    z-index: 5;
+    width: 30%;
+    color: var(--marine-blue);
+}
+
+.slider-summary::before {
+    content: url(../assets/shared/image/group-5.png);
+    transform: scale(0.9);
+    /* width: 250px; */
+    /* height: 0px; */
+    display: inline-block;
+    position: absolute;
+    z-index: 1;
+    left: 20px;
+    top: -136px;
+}
+
+.crypt_text_medium {
+    font-family: Rubik_medium;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1.2;
+    text-align: left;
+}
+
+.card-container {
+    position: relative;
+    z-index: 5;
+    margin: 120px 0px 15px 350px;
+    display: flex;
+    width: 2300px;
+    height: auto;
+    overflow: hidden;
+    transition: all 0.6s ease;
+}
+
+.card_text_reg {
+    font-family: Rubik_Regular;
+    font-size: 16px;
+    line-height: 2;
+    text-align: left;
+    font-weight: normal;
+}
+
+.card {
+    width: 300px;
+    height: 100%;
+    color: var(--dark-grey-blue-two);
+    padding: 50px 30px 46px;
+    display: flex;
+    flex-direction: column;
+    margin: 30px 30px;
+    background: var(--white);
+    border-radius: 6px;
+}
+
+.card.active {
+    color: var(--white);
+    border-radius: 6px;
+    backdrop-filter: blur(10px);
+    box-shadow: 12px 12px 20px 0 rgba(31, 219, 132, 0.5);
+    background-color: #1fdb84;
+}
+
+.card .crypt_text_reg {
+    text-align: left;
+    font-size: 16px;
+    line-height: 2;
+    font-weight: 700;
+}
+
+.card h5 span {
+    font-weight: 300;
+    font-size: 14px;
+    margin: 0px 6px;
+}
+
+.card::before {
+    content: url(../assets/shared/image/group-7.png);
+    width: 50px;
+    height: 50px;
+    margin-bottom: 30px;
+}
+
+.card.active::before {
+    content: url(../assets/shared/image/group-6.png);
+    width: 50px;
+    height: 50px;
+    margin-bottom: 30px;
+}
+
+.dots {
+    position: absolute;
+    left: 60%;
+    transform: translateX(-60%);
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    margin: 30px 40px;
+}
+
+.dot {
+    margin-right: 20px;
+    border-radius: 30px;
+    border: 2px solid var(--white);
+    background-color: transparent;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+
+.dot.activedot {
+    padding: 1px;
+    box-shadow: 2px 2px 5px 0 rgba(31, 219, 132, 0.5);
+    border: 1px solid var(--white);
+    background-color: var(--theme-color);
+
+}
+
+@media (max-width:1200px) {
+    .platform_row.container.fx--sb-cen {
+        flex-direction: column;
+    }
+
+    .platform_row picture {
+        margin: 20px 0px;
+    }
+}
+
 @media(max-width:769px) {
 
     /* .fx--sb-cen {
@@ -697,7 +851,44 @@ header {
     .artboard_box img {
         right: -15px;
     }
+
+    .slider::after {
+        width: 100%;
+    }
+
+    .card-container {
+        margin: 120px 0px 15px 144px;
+    }
+
+    .slider-summary::before {
+        content: "";
+    }
+
+    .slider-summary p {
+        color: var(--white);
+        position: absolute;
+        top: 5%;
+        left: 0px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .slider-summary p br {
+        display: none;
+    }
+
+    .card {
+        margin: 30px 24px;
+    }
+
+    .dots {
+        margin: 20px 0px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
 }
+
 
 @media(max-width:480px) {
     header {
@@ -797,4 +988,11 @@ header {
         max-width: 100%;
     }
 
+    .card-container {
+        margin: 120px 0px 15px 0px;
+    }
+
+    .crypt_text_medium {
+        font-size: 30px;
+    }
 }
