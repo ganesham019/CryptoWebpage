@@ -7,7 +7,7 @@ dots.forEach((dot, index) => {
     dot.addEventListener("click", (e) => {
         let currentDotNumber = e.target.dataset.num;
         if (currentDotNumber !== activeNum) {
-            const pixels = -cardWidth * currentDotNumber;
+            const pixels = -(cardWidth + 50) * currentDotNumber;
             wrapper.style.transform = 'translateX(' + pixels + 'px)';
             var listCards = document.querySelector(".active");
             var listdots = document.querySelector(".activedot");
@@ -28,27 +28,19 @@ dots.forEach((dot, index) => {
 
 
 const menubar = document.querySelector("#menu_bar");
+const menubarIcon = document.querySelector("#menu_bar i");
 const menu = document.querySelector("#menu_list");
-const closeMenu = document.querySelector("#close_menu");
-
+const header = document.querySelector('.header');
 let menuIcon = true;
 
 menubar.addEventListener('click', function navbar() {
-
-    const closeMenu = document.querySelector("#close_menu");
     menuIcon = !menuIcon;
     if (menuIcon) {
         menu.classList.remove("active_menu");
+        menubarIcon.setAttribute("class", "fa fa-bars")
     } else {
         menu.classList.add("active_menu");
-        closeMenu.style.opacity = "1";
+        menubarIcon.setAttribute("class", "fa fa-close")
     }
 }
 )
-
-
-
-closeMenu.addEventListener('click', function closeBar() {
-    closeMenu.style.opacity = "0";
-    menu.classList.remove("active_menu");
-})
